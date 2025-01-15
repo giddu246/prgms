@@ -1,0 +1,35 @@
+import React, { useState } from 'react';
+
+function App() {
+  // State to store the value of the text area
+  const [text, setText] = useState('');
+
+  // Handle change in text area and update the state
+  const handleChange = (event) => {
+    setText(event.target.value);
+  };
+
+  return (
+    <div className="App">
+      <h1>Text Area Form Example</h1>
+
+      {/* Text Area to take input */}
+      <form>
+        <label htmlFor="textInput">Enter Text:</label><br />
+        <textarea
+          id="textInput"
+          value={text}
+          onChange={handleChange}  // Updates the state on change
+          rows="4"
+          cols="50"
+        ></textarea>
+      </form>
+
+      {/* Displaying the updated text */}
+      <h2>Updated Text:</h2>
+      <p>{text}</p>
+    </div>
+  );
+}
+
+export default App;
